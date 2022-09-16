@@ -31,17 +31,17 @@ export class TemaComponent implements OnInit {
   }
 
   findAllTemas(){
-    this.temaService.getAllTema().subscribe((resp:Tema[] ) =>{
+    this.temaService.getAllTema().subscribe((resp:Tema[] ) => {
       this.listaTemas = resp
      
       
       alert('Tema cadastrado com sucesso!')
       this.tema = new Tema ()
-    }
+    })
   }
 
   cadastrar(){
-     this.temaService.postTema(this.tema).subscribe((resp: Tema)=>{
+     this.temaService.postTema(this.tema).subscribe((resp: Tema)=> {
       this.tema = resp
       alert('Tema cadastrado com sucesso')
       this.findAllTemas()
